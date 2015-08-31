@@ -1,7 +1,7 @@
 # CodingInterview
 
-# LICENSE
+## LICENSE
 This software is released under the MIT License, see LICENSE
 
-# DISCRIPTION
+## DISCRIPTION
 code base of "CODING INTERVIEW"
