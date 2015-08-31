@@ -3,5 +3,5 @@
 ### LICENSE
 This software is released under the MIT License, see LICENSE
 
-### DISCRIPTION
+### DESCRIPTION
 code base of "CODING INTERVIEW"
