@@ -7,32 +7,38 @@
 # License:: MIT License
 
 class LoopFinder
-  attr_accessor :answer
+  attr_reader :target_ary
+  attr_reader :answer
 
-  def initialize ary
-    @target_ary = ary
+  def initialize
+    require_input
+  end
+
+  def require_input
+    puts 'input array connected " -> "'
+    input = STDIN.gets.chomp
+
+    @target_ary = input.split(" -> ")
   end
 
   def solve
     @answer = [0, 0]
   end
-end
 
-puts 'input array connected " -> "'
-input = STDIN.gets.chomp
+  def output_answer
+    anser_node_no = @answer[0]
+    anser_node = @answer[1]
 
-input_ary = input.split(" -> ")
-
-solver = LoopFinder.new input_ary
-solver.solve
-
-anser_node_no = solver.answer[0]
-anser_node = solver.answer[1]
-
-out_str = <<"EOS"
-input array is #{input_ary.to_s}
+    out_str = <<-"EOS"
+input array is #{target_ary.to_s}
 the start node of roop is the node number of #{anser_node_no},
 value is #{anser_node}
-EOS
+    EOS
 
-puts out_str
+    puts out_str
+  end
+end
+
+solver = LoopFinder.new
+solver.solve
+solver.output_answer
